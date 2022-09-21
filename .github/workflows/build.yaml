@@ -12,3 +12,5 @@ jobs:
       - run: npm install 
       - run: npm run build
       - run: netlify deploy --alias=mastereiicicd
+     env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
