@@ -11,4 +11,4 @@ jobs:
       - uses: actions/setup-node@v3
       - run: npm install 
       - run: npm run build
-      - run: netlify deploy --site ${{ NETLIFY_SITE_ID }} --auth ${{ NETLIFY_AUTH_TOKEN }} --dir build/ --prod
+      - run: netlify deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --dir build/ --prod
