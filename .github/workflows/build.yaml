@@ -5,11 +5,12 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build-and-deploy-on-push:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
       - run: npm install 
       - run: npm run build
+  deploy:
       - run: netlify deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --dir build/ --prod
